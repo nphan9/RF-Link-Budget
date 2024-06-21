@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RF Link Budget Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        form { background: #f0f0f0; padding: 20px; border-radius: 5px; }
+        label { display: inline-block; width: 200px; margin-bottom: 10px; }
+        input[type="number"] { width: 100px; }
+        input[type="submit"] { margin-top: 10px; padding: 5px 15px; }
+    </style>
+</head>
+<body>
+    <h1>RF Link Budget Calculator</h1>
+    <form action="/cgi-bin/link_budget.cgi" method="post">
+        <label for="tx_power">Transmit Power (dBm):</label>
+        <input type="number" id="tx_power" name="tx_power" step="0.01" required><br>
+
+        <label for="tx_gain">Transmit Antenna Gain (dBi):</label>
+        <input type="number" id="tx_gain" name="tx_gain" step="0.01" required><br>
+
+        <label for="free_space_loss">Free Space Loss (dB):</label>
+        <input type="number" id="free_space_loss" name="free_space_loss" step="0.01" required><br>
+
+        <label for="misc_loss">Miscellaneous Loss (dB):</label>
+        <input type="number" id="misc_loss" name="misc_loss" step="0.01" required><br>
+
+        <label for="rx_gain">Receiver Antenna Gain (dBi):</label>
+        <input type="number" id="rx_gain" name="rx_gain" step="0.01" required><br>
+
+        <label for="rx_loss">Receiver Loss (dB):</label>
+        <input type="number" id="rx_loss" name="rx_loss" step="0.01" required><br>
+
+        <input type="submit" value="Calculate">
+    </form>
+</body>
+</html>
